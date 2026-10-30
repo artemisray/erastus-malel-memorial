@@ -1,0 +1,552 @@
+
+/* =================================
+   ERASTUS MALEL MEMORIAL WEBSITE
+   MAIN STYLESHEET
+================================= */
+
+
+/* GENERAL SETTINGS */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fbf9f6;
+    color: #292333;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+
+/* NAVIGATION */
+
+.topbar {
+    height: 76px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 22px #2b17410b;
+}
+
+.brand {
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    color: #342044;
+    text-decoration: none;
+}
+
+.brand span {
+    color: #7954a0;
+}
+
+nav {
+    display: flex;
+    gap: 27px;
+}
+
+nav a {
+    font-size: .9rem;
+    color: #51475a;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+nav a:hover {
+    color: #8054a7;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 1.6rem;
+    color: #54376d;
+    cursor: pointer;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 610px;
+    padding: 75px 9%;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 50px;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 30%,
+            #e8d9f0 0,
+            transparent 38%
+        ),
+        linear-gradient(
+            120deg,
+            #f7f0e9,
+            #fff 55%,
+            #f0e8f4
+        );
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: .72rem;
+    font-weight: 700;
+    color: #8968a3;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3.3rem, 7vw, 6.3rem);
+    line-height: 1.05;
+    margin: 12px 0;
+    color: #30213d;
+}
+
+.hero h1 em,
+.section h2 em {
+    color: #8055a2;
+    font-weight: 500;
+}
+
+.hero h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.7rem;
+    margin: 20px 0 0;
+}
+
+.hero h2 {
+    color: #765493;
+}
+
+.dates {
+    color: #6f6476;
+    font-weight: 600;
+}
+
+.hero-quote {
+    max-width: 440px;
+    color: #66596b;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.12rem;
+}
+
+.primary-link {
+    display: inline-block;
+    margin-top: 17px;
+    padding: 12px 20px;
+    background: #62427c;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background .3s;
+}
+
+.primary-link:hover {
+    background: #4c3065;
+}
+
+
+/* HERO PHOTO */
+
+.hero-photo-wrap {
+    justify-self: center;
+    text-align: center;
+}
+
+.photo-frame {
+    width: min(360px, 75vw);
+    height: 440px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0 20px 55px #4c31512b;
+    transform: rotate(2deg);
+    border: 1px solid #e5d9e9;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+.photo-caption {
+    display: block;
+    margin-top: 20px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: #795d8d;
+}
+
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 90px 9%;
+}
+
+
+/* INTRODUCTION */
+
+.intro {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.intro h2 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    margin: 12px 0 22px;
+}
+
+.intro > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #6d6471;
+}
+
+.verse {
+    margin: 35px auto 0;
+    padding: 22px 25px;
+    max-width: 650px;
+    border-top: 1px solid #d9c9e1;
+    border-bottom: 1px solid #d9c9e1;
+    color: #67487f;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.verse small {
+    display: block;
+    margin-top: 8px;
+    font-family: "DM Sans", sans-serif;
+    font-size: .75rem;
+    font-style: normal;
+    letter-spacing: .1em;
+}
+
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-heading h2 {
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    margin: 8px 0 12px;
+}
+
+.section-note {
+    color: #776d7c;
+}
+
+
+/* BIOGRAPHY */
+
+.story-section {
+    background: #f1ebf4;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.story-card {
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #e9dfed;
+    border-radius: 5px;
+}
+
+.story-card span {
+    color: #a48bb4;
+    font-size: .8rem;
+    letter-spacing: .12em;
+}
+
+.story-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.45rem;
+    margin: 8px 0;
+    color: #503766;
+}
+
+.story-card p {
+    margin: 0;
+    color: #6e6572;
+    font-size: .94rem;
+}
+
+
+/* PHOTO GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.gallery img:hover {
+    transform: scale(1.025);
+    box-shadow: 0 10px 25px #2a19332a;
+}
+
+
+/* FAMILY TRIBUTES */
+
+.tributes-section {
+    background: #f1ebf4;
+}
+
+.tribute-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.tribute-grid blockquote {
+    margin: 0;
+    padding: 30px;
+    background: #fff;
+    border-left: 3px solid #9674ae;
+    color: #5f5665;
+    font-family: "Playfair Display", serif;
+    font-size: 1.03rem;
+}
+
+.tribute-grid cite {
+    display: block;
+    margin-top: 18px;
+    color: #76518f;
+    font-family: "DM Sans", sans-serif;
+    font-size: .82rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+/* APPRECIATION SECTION */
+
+.appreciation {
+    text-align: center;
+    padding: 75px 9%;
+    background: linear-gradient(
+        120deg,
+        #352343,
+        #604279
+    );
+    color: #fff;
+}
+
+.appreciation .eyebrow {
+    color: #d5bce4;
+}
+
+.appreciation h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.appreciation p {
+    max-width: 680px;
+    margin: 15px auto;
+    color: #eee4f2;
+}
+
+.appreciation .closing {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: #24192c;
+    color: #d8cadd;
+    font-size: .8rem;
+}
+
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: #fff;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 55px 7%;
+    }
+
+    .hero-quote {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-photo-wrap {
+        margin-top: 15px;
+    }
+
+    .section {
+        padding: 65px 7%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 190px;
+    }
+}
+
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 520px) {
+
+    .story-grid,
+    .tribute-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        gap: 8px;
+    }
+
+    .gallery img {
+        height: 160px;
+    }
+
+    .photo-frame {
+        height: 370px;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}/* MEMORIAL MUSIC */
+.music-section {
+    text-align: center;
+}
+
+.music-player {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #f4edf7;
+    border-radius: 15px;
+    border: 1px solid #e4d5eb;
+}
+
+.music-player h3 {
+    margin-bottom: 20px;
+    color: #654477;
+}
+
+.music-player audio {
+    width: 100%;
+}
+/* TOP MEMORIAL MUSIC PLAYER */
+.top-music-player {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 5%;
+    background: #f4edf7;
+    border-bottom: 1px solid #e4d5eb;
+}
+
+.top-music-player span {
+    color: #654477;
+    font-weight: 600;
+}
+
+.top-music-player audio {
+    width: 350px;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    .top-music-player {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .top-music-player audio {
+        width: 100%;
+    }
+}
+
