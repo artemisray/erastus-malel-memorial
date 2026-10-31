@@ -19,6 +19,25 @@
 
 <body>
 
+<!-- MEMORIAL MUSIC PLAYER - VERY TOP -->
+<div class="top-music-player">
+
+    <h3>♪ A Song in His Memory</h3>
+
+    <p>Listen to a special tribute to Erastus Malel</p>
+
+    <audio id="memorialAudio" preload="metadata" loop>
+        <source src="music/erastus-farewell.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+    </audio>
+
+    <button id="musicButton" onclick="toggleMusic()">
+        ▶ Play Memorial Song ♡
+    </button>
+
+</div>
+
+
 <!-- NAVIGATION -->
 <header class="topbar">
 
@@ -39,28 +58,6 @@
     </nav>
 
 </header>
-
-
-<!-- MEMORIAL MUSIC PLAYER AT THE TOP -->
-<div class="top-music-player">
-
-    <span>♪ Remembering Erastus Malel</span>
-
-    <audio
-        id="memorialAudio"
-        controls
-        loop
-        preload="metadata">
-
-        <source
-            src="./music/erastus-farewell.mp3"
-            type="audio/mpeg">
-
-        Your browser does not support audio playback.
-
-    </audio>
-
-</div>
 
 
 <main>
@@ -95,7 +92,6 @@
             </a>
 
         </div>
-
 
         <div class="hero-photo-wrap">
 
@@ -150,16 +146,13 @@
 
         <div class="section-heading">
 
-            <p class="eyebrow">
-                The Journey of a Life
-            </p>
+            <p class="eyebrow">The Journey of a Life</p>
 
             <h2>
                 His <em>Story</em>
             </h2>
 
         </div>
-
 
         <div class="story-grid">
 
@@ -181,7 +174,6 @@
 
             </article>
 
-
             <article class="story-card">
 
                 <span>02</span>
@@ -197,7 +189,6 @@
 
             </article>
 
-
             <article class="story-card">
 
                 <span>03</span>
@@ -211,7 +202,6 @@
                 </p>
 
             </article>
-
 
             <article class="story-card">
 
@@ -239,9 +229,7 @@
 
         <div class="section-heading">
 
-            <p class="eyebrow">
-                Moments That Stay With Us
-            </p>
+            <p class="eyebrow">Moments That Stay With Us</p>
 
             <h2>
                 Memorable <em>Moments</em>
@@ -253,7 +241,6 @@
 
         </div>
 
-
         <div class="gallery" id="galleryGrid"></div>
 
     </section>
@@ -264,16 +251,13 @@
 
         <div class="section-heading">
 
-            <p class="eyebrow">
-                Words From The Heart
-            </p>
+            <p class="eyebrow">Words From The Heart</p>
 
             <h2>
                 Family <em>Tributes</em>
             </h2>
 
         </div>
-
 
         <div class="tribute-grid">
 
@@ -295,12 +279,9 @@
                     Until we meet again.
                 </p>
 
-                <cite>
-                    — Tribute from his wife
-                </cite>
+                <cite>— Tribute from his wife</cite>
 
             </blockquote>
-
 
             <blockquote>
 
@@ -316,9 +297,7 @@
                     humble, work hard, and help others.
                 </p>
 
-                <cite>
-                    — Tribute from his son
-                </cite>
+                <cite>— Tribute from his son</cite>
 
             </blockquote>
 
@@ -330,9 +309,7 @@
     <!-- APPRECIATION -->
     <section class="appreciation">
 
-        <p class="eyebrow">
-            With Gratitude
-        </p>
+        <p class="eyebrow">With Gratitude</p>
 
         <h2>
             Thank You For Remembering Erastus.
@@ -367,20 +344,35 @@
 </footer>
 
 
-<script src="script.js"></script>
-
+<!-- MUSIC BUTTON FUNCTION -->
 <script>
-    // Attempt to start memorial music automatically.
-    const memorialAudio = document.getElementById("memorialAudio");
+const memorialAudio = document.getElementById("memorialAudio");
+const musicButton = document.getElementById("musicButton");
 
-    if (memorialAudio) {
-        memorialAudio.volume = 0.5;
+function toggleMusic() {
 
-        memorialAudio.play().catch(() => {
-            // The visitor can press Play if autoplay is blocked.
+    if (memorialAudio.paused) {
+
+        memorialAudio.play().then(() => {
+            musicButton.textContent = "❚❚ Pause Memorial Song ♡";
+        }).catch(() => {
+            alert("Music could not play. Please check the music file.");
         });
+
+    } else {
+
+        memorialAudio.pause();
+        musicButton.textContent = "▶ Play Memorial Song ♡";
+
     }
+}
+
+memorialAudio.addEventListener("ended", () => {
+    musicButton.textContent = "▶ Play Memorial Song ♡";
+});
 </script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
